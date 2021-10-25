@@ -26,4 +26,8 @@ public class PaladinMove : MonoBehaviour
     {
         rb.MovePosition(rb.position +  direcao * velocidade * Time.fixedDeltaTime);
     }
+    private void Attack()
+    {
+        
+    }
 }
