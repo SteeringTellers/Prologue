@@ -8,6 +8,7 @@ public class PaladinMove : MonoBehaviour
     Vector2 direcao;
     [SerializeField]
     private Rigidbody2D rb;
+    public Animator anim;
 
     private void Start()
     {
@@ -17,6 +18,11 @@ public class PaladinMove : MonoBehaviour
     {
         direcao.x = Input.GetAxis("Horizontal");
         direcao.y = Input.GetAxis("Vertical");
+        anim.SetFloat("walk", direcao.x);
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Attack();
+        }
     }
     private void FixedUpdate()
     {
@@ -28,6 +34,6 @@ public class PaladinMove : MonoBehaviour
     }
     private void Attack()
     {
-        
+        anim.Play("Paladin_attack");
     }
 }
